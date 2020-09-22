@@ -18,5 +18,17 @@ model.fit(x_train, y_train, epochs=1000, batch_size=1,
 loss, mse = model.evaluate(x_test, y_test, batch_size =1)
 
 print("loss : ", loss)
+print("mse : ", mse)
 y_predict = model.predict(x_test)
 print("결과물 : \n", y_predict)
+
+# RMSE 구하기
+from sklearn.metrics import mean_squared_error
+def RMSE(y_test, y_predict):
+    return np.sqrt(mean_squared_error(y_test, y_predict))
+print("RMSE : ", RMSE(y_test, y_predict))
+
+# R2 구하기
+from sklearn.metrics import r2_score
+r2_y_predict = r2_score(y_test, y_predict)
+print("R2 : ", r2_y_predict)
