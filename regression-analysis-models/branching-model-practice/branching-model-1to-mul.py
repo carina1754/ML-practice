@@ -14,17 +14,11 @@ print(y1.shape)
 print(y2.shape)
 
 from sklearn.model_selection import train_test_split
-x_train, x_test, y1_train, y1_test = train_test_split(
-x, y1, random_state=66, test_size=0.2, shuffle = False
+x_train, x_test, y1_train, y1_test,y2_train, y2_test = train_test_split(
+x, y1,y2, random_state=66, test_size=0.2, shuffle = False
 )
-x_val, x_test, y1_val, y1_test = train_test_split(
-x_test, y1_test, random_state=66, test_size=0.5, shuffle = False
-)
-y2_train, y2_test = train_test_split(
-y2, random_state=66, test_size=0.2, shuffle = False
-)
-y2_val, y2_test = train_test_split(
-y2_test, random_state=66, test_size=0.5, shuffle = False
+x_val, x_test, y1_val, y1_test,y2_val, y2_test = train_test_split(
+x_test, y1_test,y2_test, random_state=66, test_size=0.5, shuffle = False
 )
 print('y2_train.shape : ', y2_train.shape)
 print('y2_val.shape : ', y2_val.shape)
@@ -62,3 +56,4 @@ mse = model.evaluate(x_test, [y1_test, y2_test], batch_size=1)
 print("mse : ", mse)
 y1_predict, y2_predict = model.predict(x_test)
 print("y1 예측값 : \n", y1_predict, "\n y2 예측값 : \n", y2_predict)
+
