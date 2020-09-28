@@ -3,13 +3,13 @@
 import numpy as np
 import pandas as pd
 
-df1 = pd.read_csv("C:\\Users\\buleb\\Desktop\\githubclone\\ML-practice\\kospi200.csv", index_col=0, 
+df1 = pd.read_csv("C:\\Users\\buleb\\Desktop\\githubclone\\ML-practice\\kospi\\kospi200.csv", index_col=0, 
                   header=0, encoding='utf-8', sep=',')
 # 경로에 주의해 주세요. 경로에서 꼭 틀립니다.                     
 print(df1)
 print(df1.shape)
 
-df2 = pd.read_csv("C:\\Users\\buleb\\Desktop\\githubclone\\ML-practice\\samsung.csv", index_col=0, 
+df2 = pd.read_csv("C:\\Users\\buleb\\Desktop\\githubclone\\ML-practice\\kospi\\samsung.csv", index_col=0, 
                   header=0, encoding='utf-8', sep=',')   
 print(df2)
 print(df2.shape)
